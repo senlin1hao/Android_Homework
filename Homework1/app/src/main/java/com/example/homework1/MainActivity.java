@@ -62,9 +62,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 {
                     // 在此处添加处理逻辑
                     EditText editText1 = findViewById(R.id.editText1);
-                    String studentNumber = editText1.getText().toString();
+                    String number = editText1.getText().toString();
                     EditText editText2 = findViewById(R.id.editText2);
-
+                    String name = editText2.getText().toString();
+                    TextView textView1 = findViewById(R.id.textView1);
+                    textView1.setText(number + " " + name);
                 }
             });
             //设置 cancel按钮
@@ -74,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onClick(DialogInterface dialog, int i)
                 {
                     // 在此处添加处理逻辑
+                    EditText editText1 = findViewById(R.id.editText1);
+                    EditText editText2 = findViewById(R.id.editText2);
+                    editText1.setText("请输入您的学号");
+                    editText2.setText("请输入您的姓名");
                 }
             });
             AlertDialog dialog = builder.create();
