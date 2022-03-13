@@ -33,57 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (view.getId() == R.id.button1)
         {
-//            TextView textView =findViewById(R.id.textView);
-//            EditText editText =findViewById(R.id.editText);
-//            String input = editText.getText().toString();
-//            textView.setText(input);
-
-//            ImageView imageView = findViewById(R.id.image);
-//            imageView.setImageResource(R.drawable.badge02);
-
-//            ProgressBar progressBar = findViewById(R.id.progressBar);
-//            if (progressBar.getVisibility() == View.VISIBLE) {
-//                progressBar.setVisibility(View.GONE);
-//            } else {
-//                progressBar.setVisibility(View.VISIBLE);
-//            }
-//            int progress = progressBar.getProgress() + 10;
-//            progressBar.setProgress(progress);
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("提示");
-            builder.setMessage("确定？");
-            builder.setCancelable(true);
-            // 设置 ok 按钮
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    // 在此处添加处理逻辑
-                    EditText editText1 = findViewById(R.id.editText1);
-                    String number = editText1.getText().toString();
-                    EditText editText2 = findViewById(R.id.editText2);
-                    String name = editText2.getText().toString();
-                    TextView textView1 = findViewById(R.id.textView1);
-                    textView1.setText(number + " " + name);
-                }
-            });
-            //设置 cancel按钮
-            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int i)
-                {
-                    // 在此处添加处理逻辑
-                    EditText editText1 = findViewById(R.id.editText1);
-                    EditText editText2 = findViewById(R.id.editText2);
-                    editText1.setText("请输入您的学号");
-                    editText2.setText("请输入您的姓名");
-                }
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show(); // 显示对话框
+            EditText editText1 = findViewById(R.id.editText1);
+            String number = editText1.getText().toString();
+            EditText editText2 = findViewById(R.id.editText2);
+            String name = editText2.getText().toString();
+            TextView textView1 = findViewById(R.id.textView1);
+            textView1.setText(number + " " + name);
         }
     }
 }
