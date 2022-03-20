@@ -24,7 +24,7 @@ public class SelfInfoActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_self_info);
         LinearLayout signatureLL = findViewById(R.id.signature_ll);
         signatureLL.setOnClickListener(this);
-
+        signatureText = findViewById(R.id.signature_txt);
     }
 
     private ActivityResultLauncher<Intent> startActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>()
