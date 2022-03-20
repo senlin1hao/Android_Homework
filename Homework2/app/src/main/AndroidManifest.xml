@@ -10,6 +10,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Homework2">
         <activity
+                android:name=".AddressActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".SignatureActivity"
                 android:exported="true"/>
         <activity

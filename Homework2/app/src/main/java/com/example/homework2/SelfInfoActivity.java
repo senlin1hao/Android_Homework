@@ -16,6 +16,7 @@ import android.os.Bundle;
 public class SelfInfoActivity extends AppCompatActivity implements View.OnClickListener
 {
     private TextView signatureText; //个性签名TextView
+    private TextView addressText;   //通信地址TextView
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,18 +26,38 @@ public class SelfInfoActivity extends AppCompatActivity implements View.OnClickL
         LinearLayout signatureLL = findViewById(R.id.signature_ll);
         signatureLL.setOnClickListener(this);
         signatureText = findViewById(R.id.signature_txt);
+        LinearLayout addressLL = findViewById(R.id.address_ll);
+        addressLL.setOnClickListener(this);
+        addressText = findViewById(R.id.address_txt);
     }
 
-    private ActivityResultLauncher<Intent> startActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>()
+    private ActivityResultLauncher<Intent> startSignatureActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>()
     {
         @Override
         public void onActivityResult(ActivityResult result)
         {
             //此处是跳转的 result 回调方法
-            if (result.getData() != null && result.getResultCode() == RESULT_OK)
+            if ((result.getData() != null) && (result.getResultCode() == RESULT_OK))
             {
-                String returnedData = result.getData().getStringExtra("data_return");
+                String returnedData = result.getData().getStringExtra("signature_data_return");
                 signatureText.setText(returnedData);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "更新失败！", Toast.LENGTH_LONG).show();
+            }
+        }
+    });
+
+    private ActivityResultLauncher<Intent> startAddressActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>()
+    {
+        @Override
+        public void onActivityResult(ActivityResult result)
+        {
+            if ((result.getData() != null) && (result.getResultCode() == RESULT_OK))
+            {
+                String returnedData = result.getData().getStringExtra("address_data_return");
+                addressText.setText(returnedData);
             }
             else
             {
@@ -52,15 +73,25 @@ public class SelfInfoActivity extends AppCompatActivity implements View.OnClickL
         switch (id)
         {
             case R.id.signature_ll:
+            {
                 String data = signatureText.getText().toString();
                 Intent intent = new Intent(this, SignatureActivity.class);
-                intent.putExtra("extra_data", data);    //向下一个 Activity 传递数据
-                startActivity.launch(intent);
+                intent.putExtra("signature_extra_data", data);    //向下一个 Activity 传递数据
+                startSignatureActivity.launch(intent);
                 break;
+            }
             case R.id.address_ll:
+            {
+                String data = addressText.getText().toString();
+                Intent intent = new Intent(this, AddressActivity.class);
+                intent.putExtra("address_extra_data", data);
+                startAddressActivity.launch(intent);
                 break;
-            case  R.id.portrait_ll:
+            }
+            case R.id.portrait_ll:
+            {
                 break;
+            }
         }
     }
 }
