@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Android_Homework/Homework2/app/src/main/res/drawable/right_arrow.xml" value="0.3388888888888889" />
         <entry key="..\:/Android/Android_Homework/Homework2/app/src/main/res/layout/activity_self_info.xml" value="0.5494791666666666" />
+        <entry key="..\:/Android/Android_Homework/Homework2/app/src/main/res/layout/activity_signature.xml" value="0.25987841945288753" />
       </map>
     </option>
   </component>

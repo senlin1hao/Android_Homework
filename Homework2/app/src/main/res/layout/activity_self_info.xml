@@ -1,10 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".SelfInfoActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#39C5BB"
+              android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+            android:id="@+id/portrait_ll"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="头像"
+                android:textSize="20sp" />
+
+        <ImageView
+                android:id="@+id/portrait_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@drawable/badge02" />
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/right_arrow" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/signature_ll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="个性签名"
+                android:textSize="20sp" />
+
+        <TextView
+                android:id="@+id/signature_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:text="厚德载物"
+                android:textSize="20sp" />
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/right_arrow" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/address_ll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="通信地址"
+                android:textSize="20sp" />
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@drawable/right_arrow" />
+
+    </LinearLayout>
+</LinearLayout>
