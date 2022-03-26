@@ -44,10 +44,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         private final TextView appName;
         private final ImageView appImage;
 
-
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
+            appName
         }
     }
 }
