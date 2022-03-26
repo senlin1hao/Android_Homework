@@ -1,11 +1,11 @@
 package com.example.homework3;
 
-public class app
+public class App
 {
     private String name;
     private int imageId;
 
-    public app(String name, int imageId)
+    public App(String name, int imageId)
     {
         this.name = name;
         this.imageId = imageId;
