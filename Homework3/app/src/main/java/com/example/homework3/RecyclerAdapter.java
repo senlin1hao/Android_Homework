@@ -34,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             {
                 int position = viewHolder.getAdapterPosition();
                 App app = appList.get(position);
-                Toast.makeText(parent.getContext(), app.getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(parent.getContext(), "您点击了：" + app.getName(), Toast.LENGTH_SHORT).show();
             }
         });
 
