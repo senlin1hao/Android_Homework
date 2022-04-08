@@ -9,10 +9,149 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/usernameTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:text="用户名："
+            android:textSize="24sp"/>
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameEditText"
+            app:layout_constraintBaseline_toBaselineOf="@id/usernameTextView"
+            app:layout_constraintStart_toEndOf="@id/usernameTextView"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordTextView"
+            app:layout_constraintTop_toBottomOf="@id/usernameTextView"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/usernameTextView"
+            android:layout_marginStart="20dp"
+            android:text="密    码："
+            android:textSize="24sp"/>
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordEditText"
+            app:layout_constraintBaseline_toBaselineOf="@id/passwordTextView"
+            app:layout_constraintStart_toEndOf="@id/passwordTextView"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneTextView"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextView"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/usernameTextView"
+            android:layout_marginStart="20dp"
+            android:text="电    话："
+            android:textSize="24sp"/>
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneEditText"
+            app:layout_constraintBaseline_toBaselineOf="@id/phoneTextView"
+            app:layout_constraintStart_toEndOf="@id/phoneTextView"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailTextView"
+            app:layout_constraintTop_toBottomOf="@id/phoneTextView"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/usernameTextView"
+            android:layout_marginStart="20dp"
+            android:text="邮    箱："
+            android:textSize="24sp"/>
+
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailEditText"
+            app:layout_constraintBaseline_toBaselineOf="@id/emailTextView"
+            app:layout_constraintStart_toEndOf="@id/emailTextView"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sexTextView"
+            app:layout_constraintTop_toBottomOf="@id/emailTextView"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/usernameTextView"
+            android:layout_marginStart="20dp"
+            android:text="性    别："
+            android:textSize="24sp"/>
+
+    <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sexSpinner"
+            app:layout_constraintBaseline_toBaselineOf="@id/sexTextView"
+            app:layout_constraintStart_toEndOf="@id/sexTextView"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveButton"
+            app:layout_constraintTop_toBottomOf="@id/sexSpinner"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="  保 存  "
+            android:textSize="24sp"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/readButton"
+            app:layout_constraintTop_toBottomOf="@id/saveButton"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="  读 取  "
+            android:textSize="24sp"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clearButton"
+            app:layout_constraintTop_toBottomOf="@id/readButton"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="  清 空  "
+            android:textSize="24sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
