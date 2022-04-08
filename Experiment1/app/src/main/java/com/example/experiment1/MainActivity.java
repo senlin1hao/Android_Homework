@@ -38,81 +38,102 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (view.getId() == R.id.saveButton)
         {
-            SharedPreferences pref = getSharedPreferences("user_info", MODE_PRIVATE);
-            SharedPreferences.Editor editor = pref.edit();
-            EditText editText;
-            String string;
-
-            editText = findViewById(R.id.usernameEditText);
-            string = editText.getText().toString();
-            editor.putString("username", string);
-
-            editText = findViewById(R.id.passwordEditText);
-            string = editText.getText().toString();
-            editor.putString("password", string);
-
-            editText = findViewById(R.id.phoneEditText);
-            string = editText.getText().toString();
-            editor.putString("phone", string);
-
-            editText = findViewById(R.id.emailEditText);
-            string = editText.getText().toString();
-            editor.putString("email", string);
-
-            Spinner spinner = findViewById(R.id.sexSpinner);
-            int i;
-            i = spinner.getSelectedItemPosition();
-            editor.putInt("sex", i);
-
-            editor.apply();
+            saveInfo();
         }
 
         if (view.getId() == R.id.readButton)
         {
-            SharedPreferences pref = getSharedPreferences("user_info", MODE_PRIVATE);
-            EditText editText;
-            String string;
-
-            string = pref.getString("username", "");
-            editText = findViewById(R.id.usernameEditText);
-            editText.setText(string);
-
-            string = pref.getString("password", "");
-            editText = findViewById(R.id.passwordEditText);
-            editText.setText(string);
-
-            string = pref.getString("phone", "");
-            editText = findViewById(R.id.phoneEditText);
-            editText.setText(string);
-
-            string = pref.getString("email", "");
-            editText = findViewById(R.id.emailEditText);
-            editText.setText(string);
-
-            int i;
-            i = pref.getInt("sex", 0);
-            Spinner spinner = findViewById(R.id.sexSpinner);
-            spinner.setSelection(i);
+            readInfo();
         }
 
         if (view.getId() == R.id.clearButton)
         {
-            EditText editText;
-
-            editText = findViewById(R.id.usernameEditText);
-            editText.setText("");
-
-            editText = findViewById(R.id.passwordEditText);
-            editText.setText("");
-
-            editText = findViewById(R.id.phoneEditText);
-            editText.setText("");
-
-            editText = findViewById(R.id.emailEditText);
-            editText.setText("");
-
-            Spinner spinner = findViewById(R.id.sexSpinner);
-            spinner.setSelection(0);
+            clearInfo();
         }
+    }
+
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        saveInfo();
+    }
+
+    private void saveInfo()
+    {
+        SharedPreferences pref = getSharedPreferences("user_info", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        EditText editText;
+        String string;
+
+        editText = findViewById(R.id.usernameEditText);
+        string = editText.getText().toString();
+        editor.putString("username", string);
+
+        editText = findViewById(R.id.passwordEditText);
+        string = editText.getText().toString();
+        editor.putString("password", string);
+
+        editText = findViewById(R.id.phoneEditText);
+        string = editText.getText().toString();
+        editor.putString("phone", string);
+
+        editText = findViewById(R.id.emailEditText);
+        string = editText.getText().toString();
+        editor.putString("email", string);
+
+        Spinner spinner = findViewById(R.id.sexSpinner);
+        int i;
+        i = spinner.getSelectedItemPosition();
+        editor.putInt("sex", i);
+
+        editor.apply();
+    }
+
+    private void readInfo()
+    {
+        SharedPreferences pref = getSharedPreferences("user_info", MODE_PRIVATE);
+        EditText editText;
+        String string;
+
+        string = pref.getString("username", "");
+        editText = findViewById(R.id.usernameEditText);
+        editText.setText(string);
+
+        string = pref.getString("password", "");
+        editText = findViewById(R.id.passwordEditText);
+        editText.setText(string);
+
+        string = pref.getString("phone", "");
+        editText = findViewById(R.id.phoneEditText);
+        editText.setText(string);
+
+        string = pref.getString("email", "");
+        editText = findViewById(R.id.emailEditText);
+        editText.setText(string);
+
+        int i;
+        i = pref.getInt("sex", 0);
+        Spinner spinner = findViewById(R.id.sexSpinner);
+        spinner.setSelection(i);
+    }
+
+    private void clearInfo()
+    {
+        EditText editText;
+
+        editText = findViewById(R.id.usernameEditText);
+        editText.setText("");
+
+        editText = findViewById(R.id.passwordEditText);
+        editText.setText("");
+
+        editText = findViewById(R.id.phoneEditText);
+        editText.setText("");
+
+        editText = findViewById(R.id.emailEditText);
+        editText.setText("");
+
+        Spinner spinner = findViewById(R.id.sexSpinner);
+        spinner.setSelection(0);
     }
 }
